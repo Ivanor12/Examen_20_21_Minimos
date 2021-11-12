@@ -16,21 +16,21 @@ if (isset($_REQUEST['btn_calcular']))
     }
     else //datos correctos
     {
-    if($tipo_peso==2)//libras=>conversion
-    {
-        $peso=$peso/0.453592;
-    }
+        if($tipo_peso==2)//libras=>conversion
+        {
+            $peso=$peso/0.453592;
+        }
 
-    if($sexo==1)//es hombre
-    {
-        $TMB=66 + (13.7 * $peso) + (5 * $altura) - (6.8 * $edad);
-    }
-    else//mujer
-    {
-        $TMB=655 + (9.6 * $peso) + (1.8 * $altura) - (4.7 * $edad);
-    }
-    $resultado=$TMB*$nivel_actividad;
-    //echo $resultado;
+        if($sexo==1)//es hombre
+        {
+            $TMB=66 + (13.7 * $peso) + (5 * $altura) - (6.8 * $edad);
+        }
+        else//mujer
+        {
+            $TMB=655 + (9.6 * $peso) + (1.8 * $altura) - (4.7 * $edad);
+        }
+        $resultado=$TMB*$nivel_actividad;
+        //echo $resultado;
     }
 }
  
