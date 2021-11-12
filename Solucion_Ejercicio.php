@@ -10,8 +10,12 @@ if (isset($_REQUEST['btn_calcular']))
     $edad=$_REQUEST['txt_edad'];
     $sexo=$_REQUEST['rb_sexo'];
     $tipo_peso=$_REQUEST['rb_tipo_peso'];
-    if (($altura>151) && ($altura<200)&& ($edad>20)&& ($edad<70));
-    //datos correctos
+    if (($altura<151) || ($altura>200) || ($edad<21) || ($edad>70))
+    {
+        echo 'DATOS INCORRECTOS';
+    }
+    else //datos correctos
+    {
     if($tipo_peso==2)//libras=>conversion
     {
         $peso=$peso/0.453592;
@@ -21,16 +25,15 @@ if (isset($_REQUEST['btn_calcular']))
     {
         $TMB=66 + (13.7 * $peso) + (5 * $altura) - (6.8 * $edad);
     }
-    else{//mujer
+    else//mujer
+    {
         $TMB=655 + (9.6 * $peso) + (1.8 * $altura) - (4.7 * $edad);
     }
     $resultado=$TMB*$nivel_actividad;
     //echo $resultado;
+    }
 }
-  else{
-        $resultado="Datos ERRONEOS";
-  }
-
+ 
 echo'  
 
      <div class="postcontent">
